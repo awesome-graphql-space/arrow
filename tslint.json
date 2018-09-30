@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "semicolon": true,
+    "object-literal-sort-keys": false
+  }
+}

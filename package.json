@@ -1,0 +1,82 @@
+{
+  "name": "@linaframework/arrow",
+  "version": "1.0.0-alpha.1",
+  "description": "arrow is an arangodb orm",
+  "license": "MIT",
+  "repository": "https://gitlab.com/aweseome-graphql-space/arrow",
+  "author": {
+    "name": "Rex Raphael",
+    "email": "rex.raphael@outlook.com",
+    "url": "www.rexraph.com"
+  },
+  "keywords": [
+    "database",
+    "orm",
+    "arangojs",
+    "lina",
+    "linaframework",
+    "ormjs",
+    "arango",
+    "arangodb",
+    "odm",
+    "mongo",
+    "mongodb",
+    "document",
+    "nosql"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib && rimraf coverage",
+    "format": "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build",
+    "prebuild": "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
+    "build": "tsc --pretty",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "watch": "npm run build -- --watch",
+    "watch:test": "jest --watch"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.14.116",
+    "@types/moment": "^2.13.0",
+    "arangojs": "^6.6.0",
+    "arangolize": "^0.9.8",
+    "core-decorators": "^0.20.0",
+    "dotnet": "^1.1.4",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "open": "0.0.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^22.0.1",
+    "@types/node": "^8.0.0",
+    "coveralls": "^2.0.0",
+    "jest": "^22.0.4",
+    "prettier": "^1.5.2",
+    "rimraf": "^2.0.0",
+    "ts-jest": "^22.0.1",
+    "ts-node": "^3.2.0",
+    "tslint": "^5.0.0",
+    "tslint-config-prettier": "^1.1.0",
+    "typescript": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "jest": {
+    "transform": {
+      ".(ts)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testEnvironment": "node"
+  }
+}
